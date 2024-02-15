@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import './App.css';
 
-// Firebase v9+ modular imports
+
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, query, orderBy, limit, addDoc, serverTimestamp } from 'firebase/firestore';
 import { getAuth, signInWithPopup, GoogleAuthProvider, signOut } from 'firebase/auth';
@@ -20,7 +20,7 @@ const firebaseConfig = {
   measurementId: "G-5CSLBPRWWJ"
 };
 
-// Initialize Firebase
+
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const firestore = getFirestore(app);
@@ -51,7 +51,7 @@ function SignIn({ auth }) {
   return (
     <>
       <button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</button>
-      <p>Do not violate the community guidelines or you will be banned for life!</p>
+      <p>have fun</p>
     </>
   );
 }
@@ -95,7 +95,7 @@ function ChatRoom({ firestore, auth }) {
 
       <form onSubmit={sendMessage}>
         <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="say something nice" />
-        <button type="submit" disabled={!formValue}>🕊️</button>
+        <button type="submit" disabled={!formValue}>↩</button>
       </form>
     </>
   );
